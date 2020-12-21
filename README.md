@@ -1,6 +1,6 @@
-# Timothy-LiuXuefeng's personal page
+# Timothy's personal page
 
-**Welcome to Timothy-LiuXuefeng's personal page!**
+**Welcome to Timothy‘s personal page!**
 
 [Home Page](HomePage/HomePage.html)
 
