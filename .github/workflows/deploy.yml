@@ -5,10 +5,16 @@ on:
     branches: [main]
 
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Test
+        run: |
+          echo ${{ github.event.actor.login }}
+          echo ${{ github.event.repository.id }}
+          echo ${{ github.event.repository.url }}
+
       - uses: actions/checkout@v2
 
       - name: Use Node.js ${{matrix.node-version}}
