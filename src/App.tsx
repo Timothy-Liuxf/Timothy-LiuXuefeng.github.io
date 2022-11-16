@@ -18,6 +18,8 @@ function App() {
         >
           View GitHub Profile
         </a>
+        <br />
+        <p>NOTE: This page has been deprecated, only used for testing.</p>
       </header>
     </div>
   );
