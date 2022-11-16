@@ -16,11 +16,12 @@ jobs:
         with:
           node-version: "16.x"
 
-      - name: get yarn cache path
+      - name: Get yarn cache path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
 
-      - uses: actions/cache@v3
+      - name: Get yarn path cache
+        uses: actions/cache@v3
         id: yarn-cache
         with:
           path: ${{steps.yarn-cache-dir-path.outputs.dir}}
@@ -28,11 +29,13 @@ jobs:
           restore-keys: |
             ${{runner.os}}-yarn-
 
-      - name: install dependencies
+      - name: Install dependencies
         run: yarn
 
-      - name: build
+      - name: Build
         run: yarn predeploy
 
-      - name: deploy
-        run: yarn deploy
+      - name: Deploy
+        run: |
+          git remote set-url origin git push https://${{ secrets.PROFILE_MATRIX_TOKEN }}@github.com/{{ github.event.repository.name }}.git
+          yarn deploy
