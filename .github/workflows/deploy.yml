@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Test
         run: |
-          echo ${{ github.event.actor.login }}
+          echo ${{ github.actor }}
           echo ${{ github.event.repository.id }}
           echo ${{ github.event.repository.url }}
 
