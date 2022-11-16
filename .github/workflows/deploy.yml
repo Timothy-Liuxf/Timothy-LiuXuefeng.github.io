@@ -37,5 +37,5 @@ jobs:
 
       - name: Deploy
         run: |
-          git remote set-url origin git push https://${{ secrets.PROFILE_MATRIX_TOKEN }}@github.com/{{ github.event.repository.name }}.git
+          git remote set-url origin git push https://${{ secrets.PROFILE_MATRIX_TOKEN }}@github.com/${{ github.event.repository.name }}.git
           yarn deploy
