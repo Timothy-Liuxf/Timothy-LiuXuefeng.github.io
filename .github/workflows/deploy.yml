@@ -9,8 +9,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: test
-        run: echo ${{ github.repository_owner }}
       - uses: actions/checkout@v2
 
       - name: Use Node.js ${{matrix.node-version}}
@@ -40,5 +38,6 @@ jobs:
       - name: Deploy
         run: |
           git remote set-url --add origin https://${{ secrets.PROFILE_MATRIX_TOKEN }}@github.com/${{ github.actor }}/${{ github.event.repository.name }}.git
-          git config --global 
+          git config --global user.email "${{ secrets.COMMIT_EMAIL }}"
+          git config --global user.name "${{ secrets.COMMIT_USERNAME }}"
           yarn deploy
