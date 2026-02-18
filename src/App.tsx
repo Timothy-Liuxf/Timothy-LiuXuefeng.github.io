@@ -2,7 +2,7 @@ import React from "react";
 import profile from "./profile.png";
 import "./App.css";
 
-function App() {
+const App = () => {
   const detectLegs = () => {
     alert("One leg detected: \\brgg/!!!");
   };
@@ -28,6 +28,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;
