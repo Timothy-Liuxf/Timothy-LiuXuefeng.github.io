@@ -3,6 +3,10 @@ import profile from "./profile.png";
 import "./App.css";
 
 function App() {
+  const detectLegs = () => {
+    alert("One leg detected: \\brgg/!!!");
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -20,6 +24,7 @@ function App() {
         </a>
         <br />
         <p>NOTE: This page has been deprecated, only used for testing.</p>
+        <button className="App-button" onClick={detectLegs}>👉 Detect Legs</button>
       </header>
     </div>
   );
